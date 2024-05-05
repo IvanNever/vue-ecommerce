@@ -1,12 +1,12 @@
 import type { Entity } from '../domain/entity'
 import type { EntityDto } from './entityDto'
 
-export const entityMapperFromDto = (entity: Entity): EntityDto => {
+export const entityFromDto = (entity: EntityDto): Entity => {
   // Mapping logic
-  return entity as EntityDto
+  return entity as Entity
 }
 
-export const entityMapperToDto = (entityDto: EntityDto): Entity => {
+export const entityToDto = (entityDto: Entity): EntityDto => {
   // Mapping logic
-  return entityDto as Entity
+  return entityDto as EntityDto
 }
