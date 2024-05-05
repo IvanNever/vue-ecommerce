@@ -6,7 +6,7 @@ export const entityFromDto = (entity: EntityDto): Entity => {
   return entity as Entity
 }
 
-export const entityToDto = (entityDto: Entity): EntityDto => {
+export const entityToDto = (entity: Entity): EntityDto => {
   // Mapping logic
-  return entityDto as EntityDto
+  return entity as EntityDto
 }
