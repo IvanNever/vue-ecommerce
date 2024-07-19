@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import EntityList from '@/entity/views/EntityList.vue'
-import EntityDetails from '@/entity/views/EntityDetails.vue'
-import EntitySave from '@/entity/views/EntitySave.vue'
+import { userRoutes } from '@/user/infrastructure/routes'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,24 +7,8 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      redirect: { name: 'entity-list' },
-      children: [
-        {
-          path: 'entities',
-          name: 'entity-list',
-          component: EntityList
-        },
-        {
-          path: 'entities/:id',
-          name: 'entity-details',
-          component: EntityDetails
-        },
-        {
-          path: 'entities/:id/save',
-          name: 'entity-save',
-          component: EntitySave
-        }
-      ]
+      redirect: { name: 'User-list' },
+      children: [...userRoutes]
     }
   ]
 })
