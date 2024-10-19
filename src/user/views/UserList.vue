@@ -6,6 +6,7 @@ import { userContext } from '../infrastructure/context';
 import AppButton from '@/ui-kit/AppButton.vue';
 
 import type { UserRepo } from '../domain/userRepo';
+import AppIcon from '@/ui-kit/AppIcon.vue';
 
 const userRepo = userContext.get<UserRepo>('UserRepository');
 const { users } = useUsers();

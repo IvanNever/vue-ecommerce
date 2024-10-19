@@ -7,6 +7,7 @@ import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
+import '@mdi/font/css/materialdesignicons.css';
 
 import { initPublicContext } from '@/infrastructure/context';
 import { initUserContext } from './user/infrastructure/context';
@@ -18,6 +19,9 @@ const vuetify = createVuetify({
   directives,
   theme: {
     defaultTheme: 'dark'
+  },
+  icons: {
+    defaultSet: 'mdi'
   }
 });
 
