@@ -1,17 +1,33 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from 'vue';
+import router from './infrastructure/router';
+import { createPinia } from 'pinia';
 
-import App from './App.vue'
-import router from './infrastructure/router'
-import { initPublicContext } from '@/infrastructure/context'
-import { initUserContext } from './user/infrastructure/context'
+// Vuetify
+import 'vuetify/styles';
+import { createVuetify } from 'vuetify';
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
 
-const app = createApp(App)
+import { initPublicContext } from '@/infrastructure/context';
+import { initUserContext } from './user/infrastructure/context';
 
-app.use(createPinia())
-app.use(router)
+import App from './App.vue';
 
-initPublicContext()
-initUserContext()
+const vuetify = createVuetify({
+  components,
+  directives,
+  theme: {
+    defaultTheme: 'dark'
+  }
+});
 
-app.mount('#app')
+const app = createApp(App);
+
+app.use(vuetify);
+app.use(createPinia());
+app.use(router);
+
+initPublicContext();
+initUserContext();
+
+app.mount('#app');

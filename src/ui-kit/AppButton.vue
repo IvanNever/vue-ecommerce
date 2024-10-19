@@ -1,14 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <button class="button">
+  <v-btn class="button">
     <slot />
-  </button>
+  </v-btn>
 </template>
 
 <style scoped lang="scss">
 .button {
-  height: 2rem;
-  cursor: pointer;
 }
 </style>
