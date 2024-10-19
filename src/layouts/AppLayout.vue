@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AppHeader from '@/ui-kit/AppHeader.vue';
-import AppNavigation from '@/ui-kit/AppNavigation.vue';
-import AppMain from '@/ui-kit/AppMain.vue';
+import AppHeader from '@/layouts/AppHeader.vue';
+import AppNavigation from '@/layouts/AppNavbar.vue';
+import AppMain from '@/layouts/AppMain.vue';
 </script>
 
 <template>

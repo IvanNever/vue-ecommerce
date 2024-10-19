@@ -2,13 +2,12 @@
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useUsers } from './useUsers';
-import { userContext } from '../infrastructure/context';
+import { usersContext } from '../infrastructure/context';
 import AppButton from '@/ui-kit/AppButton.vue';
 
-import type { UserRepo } from '../domain/userRepo';
-import AppIcon from '@/ui-kit/AppIcon.vue';
+import type { UsersRepo } from '../domain/usersRepo';
 
-const userRepo = userContext.get<UserRepo>('UserRepository');
+const userRepo = usersContext.get<UsersRepo>('UsersRepository');
 const { users } = useUsers();
 const router = useRouter();
 
@@ -21,11 +20,11 @@ async function getUsers(): Promise<void> {
 }
 
 function showCreateUser(): void {
-  router.push({ name: 'User-create' });
+  router.push({ name: 'user-create' });
 }
 
 function showUserDetails(id: number): void {
-  router.push({ name: 'User-details', params: { id: id.toString() } });
+  router.push({ name: 'user-details', params: { id: id.toString() } });
 }
 
 function deleteUser(): void {

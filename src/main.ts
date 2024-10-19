@@ -10,7 +10,7 @@ import * as directives from 'vuetify/directives';
 import '@mdi/font/css/materialdesignicons.css';
 
 import { initPublicContext } from '@/infrastructure/context';
-import { initUserContext } from './user/infrastructure/context';
+import { initUserContext } from '@/users/infrastructure/context';
 
 import App from './App.vue';
 
