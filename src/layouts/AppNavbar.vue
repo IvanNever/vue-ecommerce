@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { useNavbar } from '@/layouts/useNavbar';
 import AppIcon from '@/ui-kit/AppIcon.vue';
+import { useDisplay } from 'vuetify';
+import { onMounted } from 'vue';
 
-const { isNavbar } = useNavbar();
+const { isNavbar, toggleNavbar } = useNavbar();
+const { lg } = useDisplay();
 
 const pages = [
   { title: 'Dashboard', icon: 'mdi-view-dashboard', to: { name: 'dashboard' } },
@@ -19,6 +22,10 @@ const pages = [
   { title: 'Orders', icon: 'mdi-cart-check', to: { name: 'orders' } },
   { title: 'Users', icon: 'mdi-account-group', to: { name: 'users' } }
 ];
+
+onMounted(() => {
+  if (lg.value) toggleNavbar();
+});
 </script>
 
 <template>
