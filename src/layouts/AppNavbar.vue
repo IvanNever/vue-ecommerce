@@ -5,7 +5,7 @@ import { useDisplay } from 'vuetify';
 import { onMounted } from 'vue';
 
 const { isNavbar, toggleNavbar } = useNavbar();
-const { lg } = useDisplay();
+const { lg, xl, xxl } = useDisplay();
 
 const pages = [
   { title: 'Dashboard', icon: 'mdi-view-dashboard', to: { name: 'dashboard' } },
@@ -24,7 +24,7 @@ const pages = [
 ];
 
 onMounted(() => {
-  if (lg.value) toggleNavbar();
+  if (lg.value || xl.value || xxl.value) toggleNavbar();
 });
 </script>
 

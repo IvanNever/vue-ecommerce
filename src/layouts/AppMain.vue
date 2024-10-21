@@ -12,6 +12,9 @@
 .main {
   &__wrapper {
     padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 }
 </style>

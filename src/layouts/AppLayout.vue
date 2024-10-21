@@ -2,6 +2,7 @@
 import AppHeader from '@/layouts/AppHeader.vue';
 import AppNavigation from '@/layouts/AppNavbar.vue';
 import AppMain from '@/layouts/AppMain.vue';
+import AppFooter from '@/layouts/AppFooter.vue';
 </script>
 
 <template>
@@ -9,7 +10,10 @@ import AppMain from '@/layouts/AppMain.vue';
     <AppHeader />
     <AppNavigation />
     <AppMain>
-      <router-view />
+      <div class="flex-grow-1">
+        <router-view />
+      </div>
+      <AppFooter />
     </AppMain>
   </v-app>
 </template>
