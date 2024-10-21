@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppHeading from '@/ui-kit/AppHeading.vue';
+</script>
 
 <template>
   <div>
-    <h1>Products List</h1>
+    <AppHeading type="h1">Products List</AppHeading>
   </div>
 </template>
 

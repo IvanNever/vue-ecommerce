@@ -6,6 +6,7 @@ import { usersContext } from '../infrastructure/context';
 import AppButton from '@/ui-kit/AppButton.vue';
 
 import type { UsersRepo } from '../domain/usersRepo';
+import AppHeading from '@/ui-kit/AppHeading.vue';
 
 const userRepo = usersContext.get<UsersRepo>('UsersRepository');
 const { users } = useUsers();
@@ -40,35 +41,37 @@ onMounted(() => {
 
 <template>
   <div class="users">
-    <div class="d-flex align-center justify-space-between mb-6">
-      <h1 class="text-h4">User List Page</h1>
+    <div class="d-flex align-center justify-space-between">
+      <AppHeading type="h1">User List Page</AppHeading>
       <AppButton @click="showCreateUser">Create New User</AppButton>
     </div>
 
-    <div v-if="!users.length">No users</div>
-    <template v-else>
-      <div class="users__row header">
-        <span>Email</span>
-        <span>Created At</span>
-        <span>Updated At</span>
-        <span>Role</span>
-        <span>Actions</span>
-      </div>
-      <div v-for="user of users" :key="user.id.toString()">
-        <div class="users__row">
-          <span>{{ user.email }}</span>
-          <span>{{ user.createdAt }}</span>
-          <span>{{ user.updatedAt }}</span>
-          <span>{{ user.roles[0].name }}</span>
-          <span>
-            <span class="users__action" @click="showUserDetails(user.id)"
-              >Details</span
-            >
-            <span class="users__action" @click="deleteUser">Delete</span>
-          </span>
+    <div class="mt-10">
+      <div v-if="!users.length">No users</div>
+      <template v-else>
+        <div class="users__row header">
+          <span>Email</span>
+          <span>Created At</span>
+          <span>Updated At</span>
+          <span>Role</span>
+          <span>Actions</span>
         </div>
-      </div>
-    </template>
+        <div v-for="user of users" :key="user.id.toString()">
+          <div class="users__row">
+            <span>{{ user.email }}</span>
+            <span>{{ user.createdAt }}</span>
+            <span>{{ user.updatedAt }}</span>
+            <span>{{ user.roles[0].name }}</span>
+            <span>
+              <span class="users__action" @click="showUserDetails(user.id)"
+                >Details</span
+              >
+              <span class="users__action" @click="deleteUser">Delete</span>
+            </span>
+          </div>
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 

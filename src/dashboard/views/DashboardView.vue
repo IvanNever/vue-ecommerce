@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppHeading from '@/ui-kit/AppHeading.vue';
+</script>
 
 <template>
   <div class="dashboard">
-    <h1>Dashboard</h1>
+    <AppHeading type="h1">Dashboard</AppHeading>
   </div>
 </template>
 

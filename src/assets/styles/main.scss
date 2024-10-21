@@ -1,3 +1,10 @@
 @use "vuetify" with (
-  $body-font-family: 'Roboto Mono'
+  $body-font-family: 'Roboto Mono',
+  $typography: (
+    'h1': (
+      'size': 2rem,
+      'weight': 600,
+       'letter-spacing': .5px,
+    ),
+  ),
 );

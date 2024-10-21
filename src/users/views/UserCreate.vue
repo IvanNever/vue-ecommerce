@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppHeading from '@/ui-kit/AppHeading.vue';
+</script>
 
 <template>
   <div>
-    <h1>Create New User Page</h1>
+    <AppHeading type="h1">Create New User Page</AppHeading>
   </div>
 </template>
 

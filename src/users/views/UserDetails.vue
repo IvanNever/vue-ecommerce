@@ -3,6 +3,7 @@ import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useUsers } from './useUsers';
 import { useUser } from './useUser';
+import AppHeading from '@/ui-kit/AppHeading.vue';
 
 const route = useRoute();
 const { users } = useUsers();
@@ -23,7 +24,7 @@ onMounted(() => {
 
 <template>
   <div class="user">
-    <h1>User Details Page</h1>
+    <AppHeading type="h1">User Details Page</AppHeading>
     <div>
       {{ user }}
     </div>
