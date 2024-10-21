@@ -40,8 +40,8 @@ onMounted(() => {
 
 <template>
   <div class="users">
-    <div class="users__heading">
-      <h1>User List Page</h1>
+    <div class="d-flex align-center justify-space-between mb-6">
+      <h1 class="text-h4">User List Page</h1>
       <AppButton @click="showCreateUser">Create New User</AppButton>
     </div>
 
@@ -74,11 +74,6 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .users {
-  &__heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   &__row {
     display: grid;
     grid-template-columns: 1fr repeat(2, 2fr) 1fr 1fr;
