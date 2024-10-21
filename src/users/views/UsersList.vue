@@ -9,6 +9,7 @@ import type { UsersRepo } from '../domain/usersRepo';
 import AppHeading from '@/ui-kit/AppHeading.vue';
 import AppIcon from '@/ui-kit/AppIcon.vue';
 import AppIconButton from '@/ui-kit/AppIconButton.vue';
+import AppBreadcrumbs from '@/ui-kit/AppBreadcrumbs.vue';
 
 const userRepo = usersContext.get<UsersRepo>('UsersRepository');
 const { users } = useUsers();
@@ -34,6 +35,19 @@ function deleteUser(): void {
   console.log('delete');
 }
 
+const breadcrumbs = [
+  {
+    title: 'Home',
+    disabled: false,
+    href: 'home'
+  },
+  {
+    title: 'Users',
+    disabled: true,
+    href: 'users'
+  }
+];
+
 onMounted(() => {
   if (!users.value.length) {
     getUsers();
@@ -44,7 +58,10 @@ onMounted(() => {
 <template>
   <div class="users">
     <div class="d-flex align-center justify-space-between">
-      <AppHeading type="h1">Users</AppHeading>
+      <div class="d-flex align-baseline ga-10">
+        <AppHeading type="h1">Users</AppHeading>
+        <AppBreadcrumbs :items="breadcrumbs" />
+      </div>
       <AppButton prepend-icon="mdi-plus" rounded="xs" @click="showCreateUser">
         Add New User
       </AppButton>

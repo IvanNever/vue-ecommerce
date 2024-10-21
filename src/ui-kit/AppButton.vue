@@ -18,9 +18,7 @@ defineProps<{
     :rounded="rounded"
     :density="density"
   >
-    <template v-if="!icon">
-      <slot></slot>
-    </template>
+    <slot></slot>
   </v-btn>
 </template>
 
