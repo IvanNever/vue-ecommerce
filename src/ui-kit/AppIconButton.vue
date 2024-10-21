@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import type { Sizes } from '@/ui-kit/commonTypes';
 
-const { icon = 'mdi-rhombus-outline' } = defineProps<{
-  icon?: string;
+defineProps<{
+  icon?: string | boolean;
   size?: Sizes | number;
-  color?: string;
+  density?: 'default' | 'comfortable' | 'compact';
 }>();
 </script>
 
 <template>
-  <v-icon :icon="icon" :size="size" :color="color"></v-icon>
+  <v-btn :icon="icon" :size="size" :density="density"></v-btn>
 </template>
 
 <style scoped lang="scss"></style>

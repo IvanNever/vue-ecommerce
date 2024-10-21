@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify';
-import AppIcon from '@/ui-kit/AppIcon.vue';
 import { useNavbar } from '@/layouts/useNavbar';
+import AppIconButton from '@/ui-kit/AppIconButton.vue';
 
 const theme = useTheme();
 const { toggleNavbar } = useNavbar();
@@ -11,27 +11,22 @@ function toggleTheme() {
 </script>
 
 <template>
-  <v-app-bar class="header">
+  <v-app-bar class="header" elevation="1">
     <template #prepend>
       <v-app-bar-nav-icon @click.stop="toggleNavbar" />
     </template>
     <v-toolbar-title>VueMart</v-toolbar-title>
     <template #append>
-      <div class="header__controls">
-        <AppIcon
+      <div class="pr-5">
+        <AppIconButton
           icon="mdi-theme-light-dark"
-          size="large"
+          density="comfortable"
+          size="x-large"
           @click="toggleTheme"
-        />
+        ></AppIconButton>
       </div>
     </template>
   </v-app-bar>
 </template>
 
-<style scoped lang="scss">
-.header {
-  &__controls {
-    padding-right: 2rem;
-  }
-}
-</style>
+<style scoped lang="scss"></style>
