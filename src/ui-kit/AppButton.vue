@@ -6,13 +6,15 @@ const {
   appendIcon,
   rounded = 'xs',
   size,
-  density
+  density,
+  color
 } = defineProps<{
   prependIcon?: string;
   appendIcon?: string;
   rounded?: BorderRadius;
   size?: Sizes | number;
   density?: 'default' | 'comfortable' | 'compact';
+  color?: string;
 }>();
 </script>
 
@@ -23,6 +25,7 @@ const {
     :size="size"
     :rounded="rounded"
     :density="density"
+    :color="color"
   >
     <slot></slot>
   </v-btn>

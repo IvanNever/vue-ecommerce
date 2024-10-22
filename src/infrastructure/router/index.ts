@@ -6,6 +6,8 @@ import DashboardView from '@/dashboard/views/DashboardView.vue';
 import ProductsView from '@/products/views/ProductsView.vue';
 import CategoriesView from '@/categories/views/CategoriesView.vue';
 import OrdersView from '@/orders/views/OrdersView.vue';
+import EmptyLayout from '@/layouts/EmptyLayout.vue';
+import LoginView from '@/auth/views/LoginView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,6 +48,21 @@ const router = createRouter({
           path: '/:pathMatch(.*)*',
           name: 'notFound',
           component: AppNotFound
+        }
+      ]
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: EmptyLayout,
+      redirect: {
+        name: 'login-page'
+      },
+      children: [
+        {
+          path: '',
+          name: 'login-page',
+          component: LoginView
         }
       ]
     }
