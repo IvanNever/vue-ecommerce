@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import type { BorderRadius, Sizes } from '@/ui-kit/commonTypes';
 
-defineProps<{
+const {
+  prependIcon,
+  appendIcon,
+  rounded = 'xs',
+  size,
+  density
+} = defineProps<{
   prependIcon?: string;
   appendIcon?: string;
+  rounded?: BorderRadius;
   size?: Sizes | number;
-  rounded?: BorderRadius | number | boolean;
   density?: 'default' | 'comfortable' | 'compact';
 }>();
 </script>

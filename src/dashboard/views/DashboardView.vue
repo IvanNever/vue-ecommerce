@@ -1,10 +1,27 @@
 <script setup lang="ts">
-import AppHeading from '@/ui-kit/AppHeading.vue';
+import AppPageHeading from '@/ui-kit/AppPageHeading.vue';
+
+const breadcrumbs = [
+  {
+    title: 'Home',
+    disabled: false,
+    href: 'home'
+  },
+  {
+    title: 'Dashboard',
+    disabled: true,
+    href: 'dashboard'
+  }
+];
 </script>
 
 <template>
   <div class="dashboard">
-    <AppHeading type="h1">Dashboard</AppHeading>
+    <AppPageHeading
+      title="Dashboard"
+      :breadcrumbs="breadcrumbs"
+    ></AppPageHeading>
+    <div>Dashboard in progress...</div>
   </div>
 </template>
 

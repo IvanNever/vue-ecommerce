@@ -1,10 +1,24 @@
 <script setup lang="ts">
-import AppHeading from '@/ui-kit/AppHeading.vue';
+import AppPageHeading from '@/ui-kit/AppPageHeading.vue';
+
+const breadcrumbs = [
+  {
+    title: 'Home',
+    disabled: false,
+    href: 'home'
+  },
+  {
+    title: 'Orders',
+    disabled: true,
+    href: 'orders'
+  }
+];
 </script>
 
 <template>
   <div>
-    <AppHeading type="h1">Orders List</AppHeading>
+    <AppPageHeading title="Orders" :breadcrumbs="breadcrumbs"></AppPageHeading>
+    <div>Orders List in progress...</div>
   </div>
 </template>
 

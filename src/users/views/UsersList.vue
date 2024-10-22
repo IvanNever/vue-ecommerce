@@ -4,12 +4,9 @@ import { useRouter } from 'vue-router';
 import { useUsers } from './useUsers';
 import { usersContext } from '../infrastructure/context';
 import AppButton from '@/ui-kit/AppButton.vue';
-
-import type { UsersRepo } from '../domain/usersRepo';
-import AppHeading from '@/ui-kit/AppHeading.vue';
-import AppIcon from '@/ui-kit/AppIcon.vue';
 import AppIconButton from '@/ui-kit/AppIconButton.vue';
-import AppBreadcrumbs from '@/ui-kit/AppBreadcrumbs.vue';
+import AppPageHeading from '@/ui-kit/AppPageHeading.vue';
+import type { UsersRepo } from '../domain/usersRepo';
 
 const userRepo = usersContext.get<UsersRepo>('UsersRepository');
 const { users } = useUsers();
@@ -57,17 +54,13 @@ onMounted(() => {
 
 <template>
   <div class="users">
-    <div class="d-flex align-center justify-space-between">
-      <div class="d-flex align-baseline ga-10">
-        <AppHeading type="h1">Users</AppHeading>
-        <AppBreadcrumbs :items="breadcrumbs" />
-      </div>
-      <AppButton prepend-icon="mdi-plus" rounded="xs" @click="showCreateUser">
+    <AppPageHeading title="Users" :breadcrumbs="breadcrumbs">
+      <AppButton prepend-icon="mdi-plus" @click="showCreateUser">
         Add New User
       </AppButton>
-    </div>
+    </AppPageHeading>
 
-    <div class="mt-10">
+    <div>
       <div v-if="!users.length">No users</div>
       <template v-else>
         <div class="users__row header">
