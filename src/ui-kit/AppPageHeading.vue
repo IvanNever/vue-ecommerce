@@ -13,12 +13,16 @@ const { title, breadcrumbs } = defineProps<{
 </script>
 
 <template>
-  <div class="d-flex align-center justify-space-between mb-8">
-    <div class="d-flex align-baseline ga-10">
+  <div
+    class="d-flex flex-wrap align-center justify-space-between mb-6 mb-md-8 ga-4"
+  >
+    <div
+      class="d-flex flex-column-reverse flex-md-row align-baseline ga-2 ga-md-10"
+    >
       <AppHeading type="h1">{{ title }}</AppHeading>
       <AppBreadcrumbs :items="breadcrumbs" />
     </div>
-    <div>
+    <div class="align-self-end align-self-md-center">
       <slot></slot>
     </div>
   </div>

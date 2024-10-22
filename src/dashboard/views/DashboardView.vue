@@ -21,7 +21,7 @@ const breadcrumbs = [
       title="Dashboard"
       :breadcrumbs="breadcrumbs"
     ></AppPageHeading>
-    <div>Dashboard in progress...</div>
+    <div class="mb-10">Dashboard in progress...</div>
   </div>
 </template>
 
